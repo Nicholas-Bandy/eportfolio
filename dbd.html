@@ -118,7 +118,19 @@
 									<header class="major">
 										<h2>Unit 7 Normalization and Data Build Task</h2>
 									</header>
-									<p>In this unit we were provided two tasks: Normalize a table provided in excel, an then use it to build a relational database with linked tables. In the normalization task we were required to transition the table through the three normal forms. First making sure every value is atomic and each row is unique. Next we make sure that every non-primary key column is related the primary key. The final form is to ensure that every non primary key column is dependant only on the primary key itself. Completing these steps before creating a database is important so that relationships between tables primary keys and the corresponding foreign keys are all correct. This ensures the integrity of the data when querying the database.</p>
+									<p>In this unit we were provided two tasks: Normalize a table provided in excel, an then use it to build a relational database with linked tables. In the normalization task we were required to transition the table shown in Figure 1 through the three normal forms.</p>
+									<img src="images/Original Table.PNG" alt="Diagram" style="width:100%">
+  									<figcaption>Figure 1: Table provided for normalization activity</figcaption>
+									<br>
+									<p>First making sure every value is atomic and each row is unique brings us to the first normal form, shown in Figure 2.</p> 
+									<img src="images/1NF.PNG" alt="Diagram" style="width:100%">
+  									<figcaption>Figure 2: First Normal Form</figcaption>
+									<br>
+									<p>Next we make sure that every non-primary key column is related the primary key to bring it to the second normal form, shown in Figure 2. In this image Student number is the primary key of the student table, Course name is the primary key of the teacher table, and Student Number and Course Name are the primary key for the Exam table.</p> 
+									<img src="images/2NF.PNG" alt="Diagram" style="width:100%">
+  									<figcaption>Figure 2: Second Normal Form</figcaption>
+									<br>
+									<p>The third form is to ensure that every non primary key column is dependant only on the primary key itself. In this example, the table is already in the third normal form as each non-primary key element in the tables is only dependent on the primary key. Completing these steps before creating a database is important so that relationships between tables primary keys and the corresponding foreign keys are all correct. This ensures the integrity of the data when querying the database.</p>
 								</div>
 							</section>
 						<!-- Six -->
