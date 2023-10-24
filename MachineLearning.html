@@ -136,7 +136,7 @@
 										<h2>Seminar 2</h2>
 									</header>
 									<p>In preparation for this seminar, our task was to perform exploratory data analysis (EDA) with the Auto-mpg dataset. Importing the required libraries and printing the first 5 rows of the datasets indicate that we expect the car name to be text, with the other columns being numeric.</p>
-									<code>import pandas as pd \n
+									<pre><code>import pandas as pd \n
 import numpy as np \n
 import matplotlib as mpl \n
 import matplotlib.pyplot as plt \n
@@ -145,7 +145,7 @@ import seaborn as sns \n
 import scipy.stats as st \n
 from sklearn import ensemble, tree, linear_model \n
 import missingno as msno \n
-									df.head()</code>
+									df.head()</code></pre>
 									<p>Checking the datatypes for each column we can see that horsepower is saved as a text field. Printing distinct values showed that instead of using nan values, ‘?’ was used in cases the horsepower was unknown. ‘?’ was then replaced with null values so that horsepower could be converted to a numeric column.</p>
 									
 									<p>The skew for all columns is less than 3 and the kurtosis is less than 6, this indicates to us that the columns are all symmetrical and don’t have heavy tails (DeCarlo, 1997).</p>
