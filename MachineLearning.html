@@ -61,7 +61,7 @@
 	<!-- Side navigation -->
 <div class="sidenav">
   <a href="#discussion_1">Discussion 1</a>
-  <a href="#">Services</a>
+  <a href="#seminar_2">Seminar 2</a>
   <a href="#">Clients</a>
   <a href="#">Contact</a>
 </div>
@@ -130,7 +130,32 @@
 							</section>
 
 						<!-- Two -->
+						<section id="seminar_2">
+								<div class="inner">
+									<header class="major">
+										<h2>Seminar 2</h2>
+									</header>
+									<p>In preparation for this seminar, our task was to perform exploratory data analysis (EDA) with the Auto-mpg dataset. Importing the required libraries and printing the first 5 rows of the datasets indicate that we expect the car name to be text, with the other columns being numeric.</p>
+
+									<p>Checking the datatypes for each column we can see that horsepower is saved as a text field. Printing distinct values showed that instead of using nan values, ‘?’ was used in cases the horsepower was unknown. ‘?’ was then replaced with null values so that horsepower could be converted to a numeric column.</p>
+									
+									<p>The skew for all columns is less than 3 and the kurtosis is less than 6, this indicates to us that the columns are all symmetrical and don’t have heavy tails (DeCarlo, 1997).</p>
+																			
+									<p>Generating a heatmap for this data shows that weight, horsepower, displacement, and cylinders have strong correlation with each other, while those four columns all also show a strong negative correlation with the origin, model year, and acceleration.</p>
+									
+									<p>A new column ‘car name code’ is added which converts the car name column to a numeric value.</p>
+									
+									<p>Finally a pairplot is produced to visualize the relations between each variable. The correlations above are easily visible in the pairplot, while also showing the relationship between car name and origin.</p>
+
+									<p>This exercise was helpful in providing an opportunity to apply the concepts we have learned in the early weeks of the course, and understanding the EDA process will be useful in understanding how to approach a new dataset in the future.</p>
+									
+
+<p>References</p>
+
+<p>DeCarlo, L. T. (1997) On the Meaning and Use of Kurtosis. Psychological methods. [Online] 2 (3), 292–307. Available From https://web-s-ebscohost-com.uniessexlib.idm.oclc.org/ehost/pdfviewer/pdfviewer?vid=0&sid=51b16d11-8f19-40e6-a38e-993423b297d6%40redis</p>
 						
+								</div>
+							</section>
 
 				<!-- Contact -->
 					<section id="contact">
