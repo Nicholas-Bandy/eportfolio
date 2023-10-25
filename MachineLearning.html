@@ -146,15 +146,21 @@ import scipy.stats as st
 from sklearn import ensemble, tree, linear_model
 import missingno as msno
 df.head()</code></pre>
-									
+									<img src="images/data head sem 2.PNG" alt="Diagram" style="width:100%">
+  									<figcaption>Figure 1: first 5 rows of the Auto-mpg dataset</figcaption>
+									<br>
 									<p>Checking the datatypes for each column we can see that horsepower is saved as a text field. Printing distinct values showed that instead of using nan values, ‘?’ was used in cases the horsepower was unknown. ‘?’ was then replaced with null values so that horsepower could be converted to a numeric column. This leaves 6 rows where horsepower is null as the only null values in the dataframe. The skew for all columns is less than 3 and the kurtosis is less than 6, this indicates to us that the columns are all symmetrical and don’t have heavy tails (DeCarlo, 1997).</p>
 									<pre><code>df.skew(), df.kurt()</code></pre>	
-									
+									<img src="images/skew and kurtosis sem2.PNG" alt="Diagram" style="width:100%">
+  									<figcaption>Figure 2: skew and kurtosis for each column</figcaption>
+									<br>
 									<p>Generating a heatmap for this data shows that weight, horsepower, displacement, and cylinders have strong correlation with each other, while those four columns all also show a strong negative correlation with the origin, model year, and acceleration.</p>
 <pre><code>f , ax = plt.subplots(figsize = (14,12))
 plt.title('Correlation of Numeric Features',y=1,size=16)
 sns.heatmap(df.corr())</code></pre>
-									
+									<img src="images/correlation heatmap sem2.PNG" alt="Diagram" style="width:100%">
+  									<figcaption>Figure 3: heatmap for correlation between features</figcaption>
+									<br>
 									<p>A new column ‘car name code’ is added which converts the car name column to a numeric value.</p>
 <pre><code>df['car_name_code'] = df['car name'].astype('category').cat.codes</code></pre>
 									
@@ -162,7 +168,9 @@ sns.heatmap(df.corr())</code></pre>
 <pre><code>sns.set()
 sns.pairplot(df,height = 2 ,kind ='scatter',diag_kind='kde')
 plt.show()</code></pre>
-									
+									<img src="images/pairplot sem 2.PNG" alt="Diagram" style="width:100%">
+  									<figcaption>Figure 4: pairplot to visualize relationships</figcaption>
+									<br>
 									<p>This exercise was helpful in providing an opportunity to apply the concepts we have learned in the early weeks of the course, and understanding the EDA process will be useful in understanding how to approach a new dataset in the future.</p>
 									
 
