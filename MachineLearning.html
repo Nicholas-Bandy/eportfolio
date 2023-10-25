@@ -23,7 +23,7 @@
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 18px;
   color: #818181;
   display: block;
 }
@@ -49,7 +49,7 @@
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav a {font-size: 14px;}
 }
 	</style>
 		<title>Nicholas Bandy</title>
@@ -62,8 +62,8 @@
 <div class="sidenav">
   <a href="#discussion_1">Discussion 1</a>
   <a href="#seminar_2">Seminar 2</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+  <a href="#jaccard">Jaccard Coefficient</a>
+  <a href="#kmeans">K-Means</a>
 </div>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -187,7 +187,7 @@ plt.show()</code></pre>
 									<header class="major">
 										<h2>Jaccard Coefficient</h2>
 									</header>
-									<p>This wiki activity is to calculate the jaccard coefficient for each pair given the table below.</p>
+									<p>This activity is to calculate the jaccard coefficient for each pair given the table below.</p>
 									<pre>Name	Gender	Fever	Cough	Test-1	Test-2	Test-3	Test-4
 Jack	M	Y	N	P	N	N	A
 Mary	F	Y	N	P	A	P	N
@@ -206,6 +206,18 @@ Jim	1	1	0	0	0	0
 									<p>Jack and Jim: Jack tested positive for test1 where Jim tested negative, and Jim tested positive for cough where Jack tested negative. This gives a numerator of 2. They both tested positive for fever, giving a denominator of 2 + 1 = 3. Therefore, the jaccard coefficient is 2/3</p>
 									<p>Mary and Jim: Mary tested positive for test1 and test3 where Jim tested negative, while Jim tested positive for cough where Mary tested negative. This gives a numerator of 3. They both tested positive for fever, giving a numerator of 3 + 1 = 4. Therefore, the jaccard coefficient is 3/4
 		
+								</div>
+							</section>
+
+						<!-- Three -->
+						<section id="kmeans">
+								<div class="inner">
+									<header class="major">
+										<h2>K-Means</h2>
+									</header>
+									<p> <a href="https://shabal.in/visuals/kmeans/1.html">The first kmeans visual</a> shows a distribution of data points and how the algorithm is affected by the starting point. Starting with the four points furthest left for the first run, furthest top for the second, furthest right for the fourth, and furthest bottom for the fourth. Only one of these gave the result of the 4 clusters that I had expected to see looking at the data points before the algorithm ran. This showed that picking the extremes as starting points can affect how the clusters are formed, as sometimes they would end up with small clusters preventing a centroid from moving closer to where it would give the most accurate match. The final run uses random starting points and does end up with the expected clusters, as the starting points are not at the extremes of the data set.</p>
+				<p> <a href="https://www.naftaliharris.com/blog/visualizing-k-means-clustering/">For the second kmeans visual</a> we were to choose our own points for a uniform distribution of data. Regardless how many clusters I chose to have or where I picked to initialize them, I always finished with the same equal clusters. This highlighted the effect that the dataset has on an algorithm, and that for the uniform dataset the starting points were not important as it always came to the same result. </p>
+									
 								</div>
 							</section>
 						
