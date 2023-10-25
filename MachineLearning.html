@@ -188,79 +188,24 @@ plt.show()</code></pre>
 										<h2>Jaccard Coefficient</h2>
 									</header>
 									<p>This wiki activity is to calculate the jaccard coefficient for each pair given the table below.</p>
-									 <tr height=20 style='height:15.0pt;box-sizing: border-box'>
-  <td height=20 class=xl66 style='height:15.0pt;border-top:none;box-sizing: border-box;
-  padding:0.75rem'>Jack</td>
-  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
-  padding:0.75rem'>M</td>
-  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
-  padding:0.75rem'>Y</td>
-  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
-  padding:0.75rem'>N</td>
-  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
-  padding:0.75rem'>P</td>
-  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
-  padding:0.75rem'>N</td>
-  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
-  padding:0.75rem'>N</td>
-  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
-  padding:0.75rem'>A</td>
- </tr>
- <tr height=20 style='height:15.0pt;box-sizing: border-box'>
-  <td height=20 class=xl66 style='height:15.0pt;border-top:none;box-sizing: border-box;
-  padding:0.75rem'>Mary</td>
-  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
-  padding:0.75rem'>F</td>
-  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
-  padding:0.75rem'>Y</td>
-  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
-  padding:0.75rem'>N</td>
-  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
-  padding:0.75rem'>P</td>
-  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
-  padding:0.75rem'>A</td>
-  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
-  padding:0.75rem'>P</td>
-  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
-  padding:0.75rem'>N</td>
- </tr>
- <tr height=20 style='height:15.0pt;box-sizing: border-box'>
-  <td height=20 class=xl66 style='height:15.0pt;border-top:none;box-sizing: border-box;
-  padding:0.75rem'>Jim</td>
-  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
-  padding:0.75rem'>M</td>
-  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
-  padding:0.75rem'>Y</td>
-  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
-  padding:0.75rem'>P</td>
-  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
-  padding:0.75rem'>N</td>
-  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
-  padding:0.75rem'>N</td>
-  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
-  padding:0.75rem'>N</td>
-  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
-  padding:0.75rem'>A</td>
- </tr>
-									
-									<p>Checking the datatypes for each column we can see that horsepower is saved as a text field. Printing distinct values showed that instead of using nan values, ‘?’ was used in cases the horsepower was unknown. ‘?’ was then replaced with null values so that horsepower could be converted to a numeric column. This leaves 6 rows where horsepower is null as the only null values in the dataframe. The skew for all columns is less than 3 and the kurtosis is less than 6, this indicates to us that the columns are all symmetrical and don’t have heavy tails (DeCarlo, 1997).</p>
 									<pre>Name	Gender	Fever	Cough	Test-1	Test-2	Test-3	Test-4
 Jack	M	Y	N	P	N	N	A
 Mary	F	Y	N	P	A	P	N
 Jim	M	Y	P	N	N	N	A
 </pre>	
 									
-									<p>Generating a heatmap for this data shows that weight, horsepower, displacement, and cylinders have strong correlation with each other, while those four columns all also show a strong negative correlation with the origin, model year, and acceleration.</p>
-			
-									<p>A new column ‘car name code’ is added which converts the car name column to a numeric value.</p>
+									<p>The Jaccard coefficient is equal to the sum of columns where either one person or the other tested positive but not both, divided by the sum of columns where one person or the other or both tested positive. Columns where both tested negative are not included.</p>
 									
-									<p>This exercise was helpful in providing an opportunity to apply the concepts we have learned in the early weeks of the course, and understanding the EDA process will be useful in understanding how to approach a new dataset in the future.</p>
-									<a href="https://github.com/Nicholas-Bandy/eportfolio/blob/main/Seminar%202.ipynb">View the final code here</a> 
-
-<p>References</p>
-
-<p>DeCarlo, L. T. (1997) On the Meaning and Use of Kurtosis. Psychological methods. [Online] 2 (3), 292–307. Available From https://web-s-ebscohost-com.uniessexlib.idm.oclc.org/ehost/pdfviewer/pdfviewer?vid=0&sid=51b16d11-8f19-40e6-a38e-993423b297d6%40redis</p>
-						
+									<p>To set this table up for jaccard coefficient calculations, we replace positive values Y and P with 1, while negative values N and A are replaced with 0. Gender is omitted as it is not a positive or negative value.</p>
+			<pre>Name	Fever	Cough	Test-1	Test-2	Test-3	Test-4
+Jack	1	0	1	0	0	0
+Mary	1	0	1	0	1	0
+Jim	1	1	0	0	0	0
+</pre>
+									<p>Jack and Mary: Jack did not test positive for anything that Mary did not, and Mary only tested positive for fever where Jack tested negative. This gives a numerator of 1. They both tested positive for fever and test1, giving a denominator of 2 + 1 = 3. Therefore, the Jaccard coefficient is 1/3</p>
+									<p>Jack and Jim: Jack tested positive for test1 where Jim tested negative, and Jim tested positive for cough where Jack tested negative. This gives a numerator of 2. They both tested positive for fever, giving a denominator of 2 + 1 = 3. Therefore, the jaccard coefficient is 2/3</p>
+									<p>Mary and Jim: Mary tested positive for test1 and test3 where Jim tested negative, while Jim tested positive for cough where Mary tested negative. This gives a numerator of 3. They both tested positive for fever, giving a numerator of 3 + 1 = 4. Therefore, the jaccard coefficient is 3/4
+		
 								</div>
 							</section>
 						
