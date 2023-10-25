@@ -181,6 +181,89 @@ plt.show()</code></pre>
 								</div>
 							</section>
 
+						<!-- Three -->
+						<section id="jaccard">
+								<div class="inner">
+									<header class="major">
+										<h2>Jaccard Coefficient</h2>
+									</header>
+									<p>This wiki activity is to calculate the jaccard coefficient for each pair given the table below.</p>
+									 <tr height=20 style='height:15.0pt;box-sizing: border-box'>
+  <td height=20 class=xl66 style='height:15.0pt;border-top:none;box-sizing: border-box;
+  padding:0.75rem'>Jack</td>
+  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
+  padding:0.75rem'>M</td>
+  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
+  padding:0.75rem'>Y</td>
+  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
+  padding:0.75rem'>N</td>
+  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
+  padding:0.75rem'>P</td>
+  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
+  padding:0.75rem'>N</td>
+  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
+  padding:0.75rem'>N</td>
+  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
+  padding:0.75rem'>A</td>
+ </tr>
+ <tr height=20 style='height:15.0pt;box-sizing: border-box'>
+  <td height=20 class=xl66 style='height:15.0pt;border-top:none;box-sizing: border-box;
+  padding:0.75rem'>Mary</td>
+  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
+  padding:0.75rem'>F</td>
+  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
+  padding:0.75rem'>Y</td>
+  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
+  padding:0.75rem'>N</td>
+  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
+  padding:0.75rem'>P</td>
+  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
+  padding:0.75rem'>A</td>
+  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
+  padding:0.75rem'>P</td>
+  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
+  padding:0.75rem'>N</td>
+ </tr>
+ <tr height=20 style='height:15.0pt;box-sizing: border-box'>
+  <td height=20 class=xl66 style='height:15.0pt;border-top:none;box-sizing: border-box;
+  padding:0.75rem'>Jim</td>
+  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
+  padding:0.75rem'>M</td>
+  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
+  padding:0.75rem'>Y</td>
+  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
+  padding:0.75rem'>P</td>
+  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
+  padding:0.75rem'>N</td>
+  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
+  padding:0.75rem'>N</td>
+  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
+  padding:0.75rem'>N</td>
+  <td class=xl66 style='border-top:none;border-left:none;box-sizing: border-box;
+  padding:0.75rem'>A</td>
+ </tr>
+									
+									<p>Checking the datatypes for each column we can see that horsepower is saved as a text field. Printing distinct values showed that instead of using nan values, ‘?’ was used in cases the horsepower was unknown. ‘?’ was then replaced with null values so that horsepower could be converted to a numeric column. This leaves 6 rows where horsepower is null as the only null values in the dataframe. The skew for all columns is less than 3 and the kurtosis is less than 6, this indicates to us that the columns are all symmetrical and don’t have heavy tails (DeCarlo, 1997).</p>
+									<pre>Name	Gender	Fever	Cough	Test-1	Test-2	Test-3	Test-4
+Jack	M	Y	N	P	N	N	A
+Mary	F	Y	N	P	A	P	N
+Jim	M	Y	P	N	N	N	A
+</pre>	
+									
+									<p>Generating a heatmap for this data shows that weight, horsepower, displacement, and cylinders have strong correlation with each other, while those four columns all also show a strong negative correlation with the origin, model year, and acceleration.</p>
+			
+									<p>A new column ‘car name code’ is added which converts the car name column to a numeric value.</p>
+									
+									<p>This exercise was helpful in providing an opportunity to apply the concepts we have learned in the early weeks of the course, and understanding the EDA process will be useful in understanding how to approach a new dataset in the future.</p>
+									<a href="https://github.com/Nicholas-Bandy/eportfolio/blob/main/Seminar%202.ipynb">View the final code here</a> 
+
+<p>References</p>
+
+<p>DeCarlo, L. T. (1997) On the Meaning and Use of Kurtosis. Psychological methods. [Online] 2 (3), 292–307. Available From https://web-s-ebscohost-com.uniessexlib.idm.oclc.org/ehost/pdfviewer/pdfviewer?vid=0&sid=51b16d11-8f19-40e6-a38e-993423b297d6%40redis</p>
+						
+								</div>
+							</section>
+						
 				<!-- Contact -->
 					<section id="contact">
 						<div class="inner">
