@@ -315,7 +315,30 @@ for item in pd.unique(y['class']):
 										<h2>Gradient Descent</h2>
 									</header>
 									<p>In this activity we observe how modifying the number of iterations and learning rate from the sample code below impacts the cost.</p>
-				<p>The default value for the learning rate is 0.08, and the cost continually decreases after each iteration. Increasing this value to 0.09 or greater changes how the cost behaves, as it starts to increase with every iteration instead of decreasing. The more it’s increased, the faster the cost continues to grow. There is also increasingly large slopes alternating between positive and negative. This represents the rate of change of the function (Mayo, 2017), meaning that the learning rate step size is too large to find the minima and will continually grow in cost as it’s overshooting it.</p>
+				<pre><code># code credit:codebasics https://codebasics.io/coming-soon
+
+import numpy as np
+
+def gradient_descent(x,y):
+    m_curr = b_curr = 0
+    iterations = 300       #change value
+    n = len(x)
+    learning_rate = 0.09   #change value
+
+    for i in range(iterations):
+        y_predicted = m_curr * x + b_curr
+        cost = (1/n) * sum([val**2 for val in (y-y_predicted)])
+        md = -(2/n)*sum(x*(y-y_predicted))
+        bd = -(2/n)*sum(y-y_predicted)
+        m_curr = m_curr - learning_rate * md
+        b_curr = b_curr - learning_rate * bd
+        print ("m {}, b {}, cost {} iteration {}".format(m_curr,b_curr,cost, i))
+
+x = np.array([1,2,3,4,5])
+y = np.array([5,7,9,11,13])
+
+gradient_descent(x,y)</code></pre>
+									<p>The default value for the learning rate is 0.08, and the cost continually decreases after each iteration. Increasing this value to 0.09 or greater changes how the cost behaves, as it starts to increase with every iteration instead of decreasing. The more it’s increased, the faster the cost continues to grow. There is also increasingly large slopes alternating between positive and negative. This represents the rate of change of the function (Mayo, 2017), meaning that the learning rate step size is too large to find the minima and will continually grow in cost as it’s overshooting it.</p>
 									<p>Decreasing the learning rate allows the cost to continue decreasing with each iteration, but it happens at a slower rate. To reach the same low levels of cost as before we need to increase the number of iterations, and will therefore take more time to reach the minima. Increasing the number of iterations too much made changes in the cost irrelevant for each iteration, as the difference was so small. This is a sign that we are already at a minima. On the contrary, lowering the number of iterations too much resulted in the cost function not getting nearly as low. Finding the correct balance or setting the iterations to quit early once a certain cost is reached could help to ensure that you are close enough to the minima without repeating unnecessarily.</p>
 								<p>References</p>
 								<p>Mayo, M. (2017). Neural Network Foundations, Explained: Updating Weights with Gradient Descent & Backpropagation. Available From: https://www.kdnuggets.com/2017/10/neural-network-foundations-explained-gradient-descent.html</p>
