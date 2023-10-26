@@ -64,6 +64,7 @@
   <a href="#seminar_2">Seminar 2</a>
   <a href="#jaccard">Jaccard Coefficient</a>
   <a href="#kmeans">K-Means</a>
+  <a href="#seminar_3">Seminar 3</a>
 </div>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -220,6 +221,92 @@ Jim	1	1	0	0	0	0
 									
 								</div>
 							</section>
+
+						<!-- Two -->
+						<section id="seminar_3">
+								<div class="inner">
+									<header class="major">
+										<h2>Seminar 3</h2>
+									</header>
+									<p>In preparation for the third seminar, we were given three tasks that involved performing k-means clustering on a given dataset.</p>
+									
+									<p>Task A was to perform k-means clustering on the iris dataset (Fisher, 1988) using k=3, and evaluate the models performance. The dataset was imported directly from the UCI repo where it is stored, and split into targets and features as described in their import guide.</p>
+									<pre><code>from ucimlrepo import fetch_ucirepo 
+import random 
+import numpy as np 
+import matplotlib.pyplot as plt 
+from sklearn.cluster import KMeans 
+from sklearn.preprocessing import StandardScaler
+import pandas as pd
+
+%matplotlib inline
+  
+# fetch dataset 
+iris = fetch_ucirepo(id=53) 
+  
+# data (as pandas dataframes) 
+X = iris.data.features 
+y = iris.data.targets 
+  
+# metadata 
+print(iris.metadata) 
+  
+# variable information 
+print(iris.variables)</code></pre>	
+									
+									<p>There are no null values in the dataset, and since it is already split into features and a target there was no need to drop any columns as reccommended in the assignment. The dataset was then normalized in preparation for clustering.</p>
+<pre><code>Clus_dataSet = StandardScaler().fit_transform(X)</code></pre>
+									
+									<p>k-means clustering can now be performed and datapoints assigned to a cluster.</p>
+<pre><code>clusterNum = 3
+k_means = KMeans(init = "k-means++", n_clusters = clusterNum, n_init = 12)
+k_means.fit(X)
+labels = k_means.labels_</code></pre>
+									
+									<p>To measure the performance of the clustering we compare the cluster labels to the corresponding class.</p>
+<pre><code>Finaldf = y
+Finaldf['cluster'] = labels
+
+for item in pd.unique(y['class']):
+  tempdf = Finaldf[Finaldf['class'] == item]
+  print( item + 'Predicted 0 = ' + str(len(tempdf[tempdf['cluster'] == 0])))
+  print( item + 'Predicted 1 = ' + str(len(tempdf[tempdf['cluster'] == 1])))
+  print( item + 'Predicted 2 = ' + str(len(tempdf[tempdf['cluster'] == 2])))</code></pre>
+									<img src="images/prediction seminar 3 taskA.PNG" alt="Diagram" style="width:50%">
+  									<figcaption>Figure 1: model predictions for each class, iris dataset</figcaption>
+									<br>
+									<p>We can see that all Iris-setosa were predicted to be in class 0. Iris-versicolor had 48 predicted in class 1 and 2 predicted in class 2, giving a 96% accuracy. Iris-virginica had 36 predicted in class 2 and 14 predicted in class 1, giving a 72% accuracy. This clustering model was effective for classifying Iris-setosa, while it occasionaly miscategorized Iris-versicolor and often miscategorized Iris-virginica.</p>
+									
+									<p>Task B was to perform k-means clustering on the wine dataset (Aeberhard & Forina, 1991) using k=3, and evaluate the models performance. The dataset was imported directly from the UCI repo where it is stored, and split into targets and features as described in their import guide.</p>
+									<p>The same import steps were followed as in task A, and the dataset was already split into numeric features and a target, so there were no columns to drop. There are also no null values in the dataset. After the data is normalized, clustering is performed with k=3</p>				
+									<pre><code>clusterNum = 3
+k_means = KMeans(init = "k-means++", n_clusters = clusterNum, n_init = 12)
+k_means.fit(X)
+labels = k_means.labels_</code></pre>
+									<p>To evaluate the models performance, we look at the number of times each target class was predicted for each cluster</p>
+									<pre><code>Finaldf = y
+Finaldf['cluster'] = labels
+
+for item in pd.unique(y['class']):
+  tempdf = Finaldf[Finaldf['class'] == item]
+  print('Class' + str(item) + ' Predicted 0 = ' + str(len(tempdf[tempdf['cluster'] == 0])))
+  print('Class' + str(item) + ' Predicted 1 = ' + str(len(tempdf[tempdf['cluster'] == 1])))
+  print('Class' + str(item) + ' Predicted 2 = ' + str(len(tempdf[tempdf['cluster'] == 2])))</code></pre>
+									<img src="images/prediction seminar 3 taskB.PNG" alt="Diagram" style="width:50%">
+  									<figcaption>Figure 2: model predictions for each class, wine dataset</figcaption>
+									<p>Target class 1 was predicted for cluster 0 46 times and cluster 2 13 times, giving an accuracy of 78%. Target class 2 was predicted for cluster 0 once, cluster 1 50 times, and cluster 2 20 times, giving an accuracy of 70%. Target class 3 was predicted for cluster 1 19 times, and cluster 2 29 times, giving an accuracy of 60%</p>
+									<p>Using clustering on the wine dataset gave much lower performance compared to the iris dataset, likely indicating that the different clusters are not as clearly defined by their characteristics when compared to the iris dataset.</p>
+									
+									<a href="https://github.com/Nicholas-Bandy/eportfolio/blob/main/Seminar3.ipynb">View the final code here</a> 
+
+<p>References</p>
+
+<p>Fisher,R. A.. (1988). Iris. UCI Machine Learning Repository. https://doi.org/10.24432/C56C76.</p>
+									<p>Aeberhard,Stefan and Forina,M.. (1991). Wine. UCI Machine Learning Repository. https://doi.org/10.24432/C5PC7J.</p>
+						
+								</div>
+							</section>
+
 						
 				<!-- Contact -->
 					<section id="contact">
