@@ -65,6 +65,7 @@
   <a href="#jaccard">Jaccard Coefficient</a>
   <a href="#kmeans">K-Means</a>
   <a href="#seminar_4">Seminar 4</a>
+  <a href="#gradient_descent">Gradient Descent</a>
 </div>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -304,6 +305,21 @@ for item in pd.unique(y['class']):
 <p>Fisher,R. A.. (1988). Iris. UCI Machine Learning Repository. https://doi.org/10.24432/C56C76.</p>
 									<p>Aeberhard,Stefan and Forina,M.. (1991). Wine. UCI Machine Learning Repository. https://doi.org/10.24432/C5PC7J.</p>
 						
+								</div>
+							</section>
+
+						<!-- Three -->
+						<section id="gradient_descent">
+								<div class="inner">
+									<header class="major">
+										<h2>Gradient Descent</h2>
+									</header>
+									<p>In this activity we observe how modifying the number of iterations and learning rate from the sample code below impacts the cost.</p>
+				<p>The default value for the learning rate is 0.08, and the cost continually decreases after each iteration. Increasing this value to 0.09 or greater changes how the cost behaves, as it starts to increase with every iteration instead of decreasing. The more it’s increased, the faster the cost continues to grow. There is also increasingly large slopes alternating between positive and negative. This represents the rate of change of the function (Mayo, 2017), meaning that the learning rate step size is too large to find the minima and will continually grow in cost as it’s overshooting it.</p>
+									<p>Decreasing the learning rate allows the cost to continue decreasing with each iteration, but it happens at a slower rate. To reach the same low levels of cost as before we need to increase the number of iterations, and will therefore take more time to reach the minima. Increasing the number of iterations too much made changes in the cost irrelevant for each iteration, as the difference was so small. This is a sign that we are already at a minima. On the contrary, lowering the number of iterations too much resulted in the cost function not getting nearly as low. Finding the correct balance or setting the iterations to quit early once a certain cost is reached could help to ensure that you are close enough to the minima without repeating unnecessarily.</p>
+								<p>References</p>
+								<p>Mayo, M. (2017). Neural Network Foundations, Explained: Updating Weights with Gradient Descent & Backpropagation. Available From: https://www.kdnuggets.com/2017/10/neural-network-foundations-explained-gradient-descent.html</p>
+								
 								</div>
 							</section>
 
