@@ -68,7 +68,7 @@
   <a href="#gradient_descent">Gradient Descent</a>
   <a href="#discussion_2">Discussion 2</a>
   <a href="#seminar_5">Seminar 5</a>
-  <a href="#CNN's">Seminar 5</a>
+  <a href="#CNN's">CNN's</a>
 </div>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -435,8 +435,11 @@ model.compile(loss='categorical_crossentropy',
               metrics=['accuracy'])
 model.summary()</code></pre>
 									<img src="images/unit9cnn.PNG" alt="Diagram" style="width:30%">
+									<figcaption>Figure 1: sample CNN structure</figcaption>
 									<p>Testing the model on the test dataset gives an accuracy of 66%, with highly varied results for each target class.</p>
-	<p>I tested this mode on images 13, 11, 4, and 5 which were correctly classified as a harse, truck, frog, and frog respectively, however testing on image 6 returned frog when it should be a car.</p>								
+	<img src="images/testunit9cnn.PNG" alt="Diagram" style="width:30%">
+									<figcaption>Figure 2: Test data results</figcaption>
+									<p>I tested this model on images 13, 11, 4, and 5 which were correctly classified as a horse, truck, frog, and frog respectively, however testing on image 6 returned frog when it should be a car.</p>								
 
 									<p>References</p>
 
