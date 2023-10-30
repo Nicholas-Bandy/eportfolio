@@ -62,6 +62,7 @@
 <div class="sidenav">
   <a href="#discussion_1">Discussion 1</a>
   <a href="#seminar_2">Seminar 2</a>
+  <a href="#corr_reg">Correlation & Regression</a>
   <a href="#jaccard">Jaccard Coefficient</a>
   <a href="#kmeans">K-Means</a>
   <a href="#seminar_4">Seminar 4</a>
@@ -190,6 +191,81 @@ plt.show()</code></pre>
 								</div>
 							</section>
 
+<!-- Two -->
+						<section id="corr_reg">
+								<div class="inner">
+									<header class="major">
+										<h2>Correlation & Regression</h2>
+									</header>
+									<p>This activity provides four different notebooks to work through, and see how the output changes with the variables. The first calculates pearsons correlation between two variables. </p>
+									<pre><code># calculate the Pearson's correlation between two variables
+from numpy import mean
+from numpy import std
+from numpy import cov
+from numpy.random import randn
+from numpy.random import seed
+from matplotlib import pyplot as plt
+import seaborn as sns
+
+from scipy.stats import pearsonr
+# seed random number generator
+seed(1)
+
+# prepare data
+data1 = 20 * randn(1000) + 100
+data2 = data1 + (100 * randn(1000) + 50)
+
+# calculate covariance matrix
+covariance = cov(data1, data2)
+
+# calculate Pearson's correlation
+corr, _ = pearsonr(data1, data2)
+
+# plot
+plt.scatter(data1, data2)
+plt.show()
+
+# summarize
+print('data1: mean=%.3f stdv=%.3f' % (mean(data1), std(data1)))
+print('data2: mean=%.3f stdv=%.3f' % (mean(data2), std(data2)))
+print('Covariance: %.3f' % covariance[0][1])
+print('Pearsons correlation: %.3f' % corr)</code></pre>
+									<p>Data2 is shown to be data1 + some noise, and has a pearsons coefficient of 0.89. Increasing the multiplier on the noise lowers the coefficient to 0.21. This is because noise becomes so large that the original patter of data1 is lost in the noise, resulting in a low correlation.</p>
+<p>The second file performs linear regression on defined data points.</p>
+									<pre><code>import matplotlib.pyplot as plt
+from scipy import stats
+
+#Create the arrays that represent the values of the x and y axis
+x = [5,7,8,7,2,17,2,9,4,11,12,9,6]
+y = [99,86,87,88,111,86,103,87,94,78,77,85,86]
+
+#Execute a method that returns some important key values of Linear Regression
+slope, intercept, r, p, std_err = stat.linregress(x, y)
+
+# measure the correlation 
+corr, _ = stat.pearsonr(x, y)
+print('Pearsons correlation: %.3f' % corr)
+
+#Create a function that uses the slope and intercept values to return a new value. 
+#This new value represents where on the y-axis the corresponding x value will be placed
+def myfunc(x):
+  return slope * x + intercept
+
+#Run each value of the x array through the function. This will result in a new array with new values for the y-axis
+mymodel = list(map(myfunc, x))
+
+#Draw the original scatter plot & the line of linear regression
+plt.scatter(x, y)
+plt.plot(x, mymodel)
+plt.show()</code></pre>
+									<p>The linear regression shows a negative relationship and seems to fit the data points reasonably well. Replacing y with randomly generated numbers causes the points to be further from the line, without any obvious connection between the line and the data points.</p>
+									<p>The third file performs multiple regression on the cars dataset, estimating the CO2 emission based on the weight and volume columns. In this file we can see that the regression is depentant on both the weight and the volume, as changing the input for either one of them changes the prediction of CO2 output.</p>
+									<p>The final file shows polynomial regression of defined data points. It starts as a polynomial of order 3 and fits the data extremely well. Changing the order of the polynomial causes the data not to align with the fits, emphasizing the importance that polynomial regression can only work if the desired polynomial order is known.</p>
+									<p>This activity reviewed correlation and regression in python. While the topics were already familiar to me, I found it helpful to see their implementation into python, so that I have a starting point when applying these to my own data.</p>
+									
+								</div>
+							</section>
+						
 						<!-- Three -->
 						<section id="jaccard">
 								<div class="inner">
@@ -529,14 +605,17 @@ for i in range(n_classes):
 # Compute micro-average ROC curve and ROC area
 fpr["micro"], tpr["micro"], _ = roc_curve(y_test.ravel(), y_score.ravel())
 roc_auc["micro"] = auc(fpr["micro"], tpr["micro"])</code></pre>
-									<img src="images/noisyAUC.png" alt="Diagram" style="width:30%">
+									<img src="images/noisyAUC.png" alt="Diagram" style="width:75%">
 									<figcaption>Figure 1: AUC with default noisy data</figcaption>
+									<br>
 									<p>The low scores were likely due to the noisy features that were added to make this more difficult, so the first thing I’ve tried is to remove the noise and observe the performance. Removing the noise gives an R2 score 0f 0.5, and an AUC score of 1.</p>
-<img src="images/nonoiseAUC.png" alt="Diagram" style="width:30%">
+<img src="images/nonoiseAUC.png" alt="Diagram" style="width:75%">
 									<figcaption>Figure 1: AUC with default noisy data</figcaption>
+									<br>
 									<p>Finally, I’ve tried reducing the multiplier on the noise from 200 to 20. This gave an R2 score of 0.27 and an AUC score of 0.88.</p>								
-<img src="images/smallnoiseAUC.png" alt="Diagram" style="width:30%">
+<img src="images/smallnoiseAUC.png" alt="Diagram" style="width:75%">
 									<figcaption>Figure 1: AUC with default noisy data</figcaption>
+									<br>
 									<p>Putting these together, we can see that having more noise in the data lowers both the AUC and the R2 score, while the cleaned data increases both the AUC and R2 score. The AUC score is directly related to the number of true positives and false positives in the dataset (Nighania, 2018), and without noise contains less false positives. According to Jordan (2017), “ The R2 coefficient represents the proportion of variance in the outcome that our model is capable of predicting based on its features.” This is why even though we obtain an almost perfect AUC value, the R2 error can still show a lower value, as it also considers the false negatives.</p>
 									<p>This assignment demonstrated different ways to evaluate a machine learning model, as accuracy isn’t the only measure that can be useful. I expect to use these in the assignment submission this week to measure our models perfomance, and also that these will be useful in the future when trying to gain deeper insights about a models performance.</p>
 									<p>References</p>
