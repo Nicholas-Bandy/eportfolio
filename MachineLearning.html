@@ -610,11 +610,11 @@ roc_auc["micro"] = auc(fpr["micro"], tpr["micro"])</code></pre>
 									<br>
 									<p>The low scores were likely due to the noisy features that were added to make this more difficult, so the first thing I’ve tried is to remove the noise and observe the performance. Removing the noise gives an R2 score 0f 0.5, and an AUC score of 1.</p>
 <img src="images/nonoiseAUC.png" alt="Diagram" style="width:75%">
-									<figcaption>Figure 1: AUC with default noisy data</figcaption>
+									<figcaption>Figure 2: AUC with noise removed from data</figcaption>
 									<br>
 									<p>Finally, I’ve tried reducing the multiplier on the noise from 200 to 20. This gave an R2 score of 0.27 and an AUC score of 0.88.</p>								
 <img src="images/smallnoiseAUC.png" alt="Diagram" style="width:75%">
-									<figcaption>Figure 1: AUC with default noisy data</figcaption>
+									<figcaption>Figure 3: AUC with decreased noise in data</figcaption>
 									<br>
 									<p>Putting these together, we can see that having more noise in the data lowers both the AUC and the R2 score, while the cleaned data increases both the AUC and R2 score. The AUC score is directly related to the number of true positives and false positives in the dataset (Nighania, 2018), and without noise contains less false positives. According to Jordan (2017), “ The R2 coefficient represents the proportion of variance in the outcome that our model is capable of predicting based on its features.” This is why even though we obtain an almost perfect AUC value, the R2 error can still show a lower value, as it also considers the false negatives.</p>
 									<p>This assignment demonstrated different ways to evaluate a machine learning model, as accuracy isn’t the only measure that can be useful. I expect to use these in the assignment submission this week to measure our models perfomance, and also that these will be useful in the future when trying to gain deeper insights about a models performance.</p>
