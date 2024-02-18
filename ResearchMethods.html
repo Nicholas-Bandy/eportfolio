@@ -23,7 +23,7 @@
 .sidenav a {
   padding: 3px 8px 3px 16px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 15px;
   color: #818181;
   display: block;
 }
@@ -49,7 +49,7 @@
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 14px;}
+  .sidenav a {font-size: 12px;}
 }
 	</style>
 		<title>Nicholas Bandy</title>
@@ -64,14 +64,11 @@
   <a href="#discussion_1_initial">Discussion 1 Initial Post</a>
   <a href="#discussion_1_peer">Discussion 1 Peer Response</a>
   <a href="#discussion_1_summary">Discussion 1 Summary</a>
-  <a href="#jaccard">Jaccard Coefficient</a>
+  <a href="#questionnaire">Questionnaire Review</a>
   <a href="#kmeans">K-Means</a>
-  <a href="#seminar_4">Seminar 4</a>
-  <a href="#assignment1">Assignment 1</a>	
-  <a href="#gradient_descent">Gradient Descent</a>
-  <a href="#discussion_2">Discussion 2</a>
-  <a href="#seminar_5">Seminar 5</a>
-  <a href="#CNN's">CNN's</a>
+  <a href="#discussion_2_initial">Discussion 2 Initial Post</a>
+  <a href="#discussion_2_peer">Discussion 2 Peer Response</a>
+  <a href="#discussion_2_initial">Discussion 2 Summary</a>
   <a href="#model_eval">Model Evaluation</a>
   <a href="#assignment2">Assignment 2</a>
   <a href="#finalreflection">Final Reflection</a>
@@ -196,7 +193,7 @@
 										<h2>Discussion 1 Summary</h2>
 									</header>
 									<p>In my initial post I provided a summary of the malware case study in which Rogue Services was hosting malicious content that spread malware and spam, and were forcibly taken down in a joint effort through vendors and government agencies. I stated that that while Rogue was not following the ACM (Association for Computing Machinery, 2018) and BCS (British Computer Society, 2022) codes by not acting in the publics best interests, the effort to take them down was and therefore could be seen as following the guidelines. This opens a debate as to who decides what's in the publics best interest, as innocent and legitimate businesses lost their data and were affected in the process.</p>
-									
+									<p>In discussion with my colleagues, it was mentioned that disabling Rogues services without safeguarding the legitimate data shows a lacking risk assessment, and could bring their reputation into disrepute. It also suggests issues around professional competence for this task, and would violate both the ACM and BCS codes. We also discussed how it can be difficult to weigh ethics against the outcome in cybersecurity, as sometimes the best outcome for most of the public can involve harming other innocent users. These discussions have helped to emphasize the importance of proper planning and risk assessment when dealing with cyber security issues, as unforeseen issues or consequences such as innocent users losing their data can have repercussions and bring professional competence into question.</p>
 							<p>References</p>
 
 <p>Association for Computing Machinery (2018) ACM Code of Ethics and Professional Conduct. Available from: https://www.acm.org/code-of-ethics</p>
@@ -206,38 +203,26 @@
 							</section>
 						
 						<!-- Three -->
-						<section id="jaccard">
+						<section id="questionnaire">
 								<div class="inner">
 									<header class="major">
-										<h2>Jaccard Coefficient</h2>
+										<h2>Questionnaire Review</h2>
 									</header>
-									<p>This activity is to calculate the jaccard coefficient for each pair given the table below.</p>
-									<pre>Name	Gender	Fever	Cough	Test-1	Test-2	Test-3	Test-4
-Jack	M	Y	N	P	N	N	A
-Mary	F	Y	N	P	A	P	N
-Jim	M	Y	P	N	N	N	A
-</pre>	
+									<p>The assignment for this week is to find and critique a questionnaire. The River Access Strategy Questionnaire from the City of Calgary (2016) was looking for feedback based on available boat and hand launch sites along the Bow River in the city. The target audience for this questionnaire looks to be residents in Calgary that use the rive for activities such as rafting, boating, or kayaking, which require a place to launch. The questionnaire consists of 10 open questions where the respondent can type their anwser, primarily focusing on the locations of launch sites along the river, and other requirements or suggestions of anything that should be included at or near the launch sites.</p>
+
+									<p>The open questions give the respondent the opportunity to express their feelings and share detailed information regarding the city’s plan, however I feel that the city could improve on the questionnaire by adding in some closed questions to gain categorical data. An example of this would be to understand how the respondent is travelling to the launch points (car, bike, walk, etc.), as it could affect their view on requirements such as parking. Additionally, understanding how frequently they use a launch site, or what type of watercraft they are launching, may provide deeper insights into specific challenges that affect these groups of people.</p>
 									
-									<p>The Jaccard coefficient is equal to the sum of columns where either one person or the other tested positive but not both, divided by the sum of columns where one person or the other or both tested positive. Columns where both tested negative are not included.</p>
-									
-									<p>To set this table up for jaccard coefficient calculations, we replace positive values Y and P with 1, while negative values N and A are replaced with 0. Gender is omitted as it is not a positive or negative value.</p>
-			<pre>Name	Fever	Cough	Test-1	Test-2	Test-3	Test-4
-Jack	1	0	1	0	0	0
-Mary	1	0	1	0	1	0
-Jim	1	1	0	0	0	0
-</pre>
-									<p>Jack and Mary: Jack did not test positive for anything that Mary did not, and Mary only tested positive for fever where Jack tested negative. This gives a numerator of 1. They both tested positive for fever and test1, giving a denominator of 2 + 1 = 3. Therefore, the Jaccard coefficient is 1/3</p>
-									<p>Jack and Jim: Jack tested positive for test1 where Jim tested negative, and Jim tested positive for cough where Jack tested negative. This gives a numerator of 2. They both tested positive for fever, giving a denominator of 2 + 1 = 3. Therefore, the jaccard coefficient is 2/3</p>
-									<p>Mary and Jim: Mary tested positive for test1 and test3 where Jim tested negative, while Jim tested positive for cough where Mary tested negative. This gives a numerator of 3. They both tested positive for fever, giving a numerator of 3 + 1 = 4. Therefore, the jaccard coefficient is 3/4
-		
+									<p>References</p>
+
+<p>City of Calgary (2016). River Access Strategy Questionnaire. Available From: https://engage.calgary.ca/riveraccess/river-access-strategy-questionnair</p>
 								</div>
 							</section>
 
 						<!-- Three -->
-						<section id="kmeans">
+						<section id="literature_review">
 								<div class="inner">
 									<header class="major">
-										<h2>K-Means</h2>
+										<h2>Literature Review</h2>
 									</header>
 									<p> <a href="https://shabal.in/visuals/kmeans/1.html">The first kmeans visual</a> shows a distribution of data points and how the algorithm is affected by the starting point. Starting with the four points furthest left for the first run, furthest top for the second, furthest right for the fourth, and furthest bottom for the fourth. Only one of these gave the result of the 4 clusters that I had expected to see looking at the data points before the algorithm ran. This showed that picking the extremes as starting points can affect how the clusters are formed, as sometimes they would end up with small clusters preventing a centroid from moving closer to where it would give the most accurate match. The final run uses random starting points and does end up with the expected clusters, as the starting points are not at the extremes of the data set.</p>
 				<p> <a href="https://www.naftaliharris.com/blog/visualizing-k-means-clustering/">For the second kmeans visual</a> we were to choose our own points for a uniform distribution of data. Regardless how many clusters I chose to have or where I picked to initialize them, I always finished with the same equal clusters. This highlighted the effect that the dataset has on an algorithm, and that for the uniform dataset the starting points were not important as it always came to the same result. </p>
@@ -246,144 +231,66 @@ Jim	1	1	0	0	0	0
 							</section>
 
 						<!-- Two -->
-						<section id="seminar_4">
+						<!-- One -->
+							<section id="discussion_2_initial">
 								<div class="inner">
 									<header class="major">
-										<h2>Seminar 4</h2>
+										<h2>Discussion 2 Initial Post</h2>
 									</header>
-									<p>In preparation for the third seminar, we were given tasks that involved performing k-means clustering on a given dataset.</p>
-									
-									<p>Task A was to perform k-means clustering on the iris dataset (Fisher, 1988) using k=3, and evaluate the models performance. The dataset was imported directly from the UCI repo where it is stored, and split into targets and features as described in their import guide.</p>
-									<pre><code>from ucimlrepo import fetch_ucirepo 
-import random 
-import numpy as np 
-import matplotlib.pyplot as plt 
-from sklearn.cluster import KMeans 
-from sklearn.preprocessing import StandardScaler
-import pandas as pd
 
-%matplotlib inline
-  
-# fetch dataset 
-iris = fetch_ucirepo(id=53) 
-  
-# data (as pandas dataframes) 
-X = iris.data.features 
-y = iris.data.targets 
-  
-# metadata 
-print(iris.metadata) 
-  
-# variable information 
-print(iris.variables)</code></pre>	
-									
-									<p>There are no null values in the dataset, and since it is already split into features and a target there was no need to drop any columns as reccommended in the assignment. The dataset was then normalized in preparation for clustering.</p>
-<pre><code>Clus_dataSet = StandardScaler().fit_transform(X)</code></pre>
-									
-									<p>k-means clustering can now be performed and datapoints assigned to a cluster.</p>
-<pre><code>clusterNum = 3
-k_means = KMeans(init = "k-means++", n_clusters = clusterNum, n_init = 12)
-k_means.fit(X)
-labels = k_means.labels_</code></pre>
-									
-									<p>To measure the performance of the clustering we compare the cluster labels to the corresponding class.</p>
-<pre><code>Finaldf = y
-Finaldf['cluster'] = labels
-
-for item in pd.unique(y['class']):
-  tempdf = Finaldf[Finaldf['class'] == item]
-  print( item + 'Predicted 0 = ' + str(len(tempdf[tempdf['cluster'] == 0])))
-  print( item + 'Predicted 1 = ' + str(len(tempdf[tempdf['cluster'] == 1])))
-  print( item + 'Predicted 2 = ' + str(len(tempdf[tempdf['cluster'] == 2])))</code></pre>
-									<img src="images/prediction seminar 3 taskA.PNG" alt="Diagram" style="width:30%">
-  									<figcaption>Figure 1: model predictions for each class, iris dataset</figcaption>
-									<br>
-									<p>We can see that all Iris-setosa were predicted to be in class 0. Iris-versicolor had 48 predicted in class 1 and 2 predicted in class 2, giving a 96% accuracy. Iris-virginica had 36 predicted in class 2 and 14 predicted in class 1, giving a 72% accuracy. This clustering model was effective for classifying Iris-setosa, while it occasionaly miscategorized Iris-versicolor and often miscategorized Iris-virginica.</p>
-									
-									<p>Task B was to perform k-means clustering on the wine dataset (Aeberhard & Forina, 1991) using k=3, and evaluate the models performance. The dataset was imported directly from the UCI repo where it is stored, and split into targets and features as described in their import guide.</p>
-									<p>The same import steps were followed as in task A, and the dataset was already split into numeric features and a target, so there were no columns to drop. There are also no null values in the dataset. After the data is normalized, clustering is performed with k=3</p>				
-									<pre><code>clusterNum = 3
-k_means = KMeans(init = "k-means++", n_clusters = clusterNum, n_init = 12)
-k_means.fit(X)
-labels = k_means.labels_</code></pre>
-									<p>To evaluate the models performance, we look at the number of times each target class was predicted for each cluster</p>
-									<pre><code>Finaldf = y
-Finaldf['cluster'] = labels
-
-for item in pd.unique(y['class']):
-  tempdf = Finaldf[Finaldf['class'] == item]
-  print('Class' + str(item) + ' Predicted 0 = ' + str(len(tempdf[tempdf['cluster'] == 0])))
-  print('Class' + str(item) + ' Predicted 1 = ' + str(len(tempdf[tempdf['cluster'] == 1])))
-  print('Class' + str(item) + ' Predicted 2 = ' + str(len(tempdf[tempdf['cluster'] == 2])))</code></pre>
-									<img src="images/prediction seminar 3 taskB.PNG" alt="Diagram" style="width:30%">
-  									<figcaption>Figure 2: model predictions for each class, wine dataset</figcaption>
-									<p>Target class 1 was predicted for cluster 0 46 times and cluster 2 13 times, giving an accuracy of 78%. Target class 2 was predicted for cluster 0 once, cluster 1 50 times, and cluster 2 20 times, giving an accuracy of 70%. Target class 3 was predicted for cluster 1 19 times, and cluster 2 29 times, giving an accuracy of 60%</p>
-									<p>Using clustering on the wine dataset gave much lower performance compared to the iris dataset, likely indicating that the different clusters are not as clearly defined by their characteristics when compared to the iris dataset. Having real datasets to practice on has been greatly beneficial in my understanding through this assignment, as previously I found it unclear how unsupervised learning could be applied for a real situation.</p>
-									
-									<a href="https://github.com/Nicholas-Bandy/eportfolio/blob/main/Seminar4.ipynb">View the final code here</a> 
+<p>Abi is obligated to present both the positive and negative results, regardless of how they are presented by the manufacturer going forward. Anything else would be intentionally hiding data to support a particular stance, which is unethical and could have a negative impact on both his and his institutes reputation. If Abi only shared partial results, he would be contributing to a loss in knowledge on the product (Sabatello et. Al, 2022). While Abi believes that Whizzz would only publicize the positive results, having the negative results shown to them could help them better understand their product and be used to make improvements, even if they’re not shared with the public.</p>					
+<p>Abi is not responsible for how Whizzz decides to share the results of the study, but can take steps to mitigate the impact of Whizzz only sharing selective results. Including all results in both his report and any report published by the research institution means that while Whizzz can selectively share positive results from the report, they cannot directly share the report from the institution without showing all results. Given that this seems to be a study funded by Whizzz, Abi and the research institution should have a data sharing agreement in place with Whizzz before beginning the study to allow them to publish and share the results, regardless of what they turn out to be.</p>
 
 <p>References</p>
 
-<p>Fisher,R. A.. (1988). Iris. UCI Machine Learning Repository. https://doi.org/10.24432/C56C76.</p>
-									<p>Aeberhard,Stefan and Forina,M.. (1991). Wine. UCI Machine Learning Repository. https://doi.org/10.24432/C5PC7J.</p>
+<p>Sabatello, M., Martschenko, D., Cho, M., Brothers, K. (2022)  Data sharing and community-engaged research: Data sharing must be accompanied by responsibility sharing. Science (American Association for the Advancement of Science). Available From: https://web-p-ebscohost-com.uniessexlib.idm.oclc.org/ehost/pdfviewer/pdfviewer?vid=0&sid=b5334d05-bef4-44bc-8ce0-a9aef4fee78b%40redis</p>
+								
+								</div>
+							</section>
+
+						<!-- Two -->
+						<section id="discussion_2_peer">
+								<div class="inner">
+									<header class="major">
+										<h2>Discussion 2 Peer Response One</h2>
+									</header>
+									<p>Hi Ruth, Thank you for your post. While I agree with most of what you’ve said, I do believe that their can be a case Whizzz having both positive and negative correlations with a persons health. The wording in the post is not very specific as you mentioned, saying that Whizzz could be seen as nutritious or harmful depending on how the data is presented. The same could be said about dried fruits, which have many nutrients and fibres to be considered nutritious, yet the high sugar content could be harmful to dental health (Sadler et. Al, 2019). This doesn’t necessarily mean that the results are inconclusive, but that the nutritional benefits and potential harmful effects of Whizzz could be unrelated or circumstantial (ie. Overconsumption)</p>
+
+									<p>The wording in the case study makes it difficult to know if this is the case, but regardless of this I agree that the final decision on how to manage the information should be handled by management and not by Abi. By reporting all of his findings Abi ensures that he is protecting both himself and the research institution should their be any investigations based on the reports Whizzz publishes from this data.</p>
+<p>References</p>
+
+<p>Sadler, M., Gibson, S., Whelan, K., Ha, M., Lovegrove, J., Higgs, J. (2019) Dried fruit and public health – what does the evidence tell us?, International Journal of Food Sciences and Nutrition, Available From: https://doi.org/10.1080/09637486.2019.1568398</p>
+
+						
+								</div>
+
+							<div class="inner">
+									<header class="major">
+										<h2>Discussion 2 Peer Response Two</h2>
+									</header>
+									<p>Hi Samuel, thank you for your thoughtful post. You are right in saying that the research’s integrity is undermined if the full results aren’t reported. This reporting bias leads to a different story being told instead of the reality, and therefore all results should be published regardless of if they are negative, positive, or seem non-significant at the time (Dawson & Dawson, 2018). The results may become more significant as further studies are done, but will not be realized if they are excluded from the report because they were not judged to be important. As you mentioned reporting all results can help to protect Abi and the research institution in the case of an investigation into any results that Whizzz decides to make public. Having a record that all results were shared and not just the positive ones that Whizzz publicized ensures that even though Whizz did not act ethically, Abi and the institution did.</p>
+									
+								<p>References</p>
+
+<p>Dawson, P. and Dawson, S.L.. (2018). Sharing successes and hiding failures: ‘reporting bias’ in learning and teaching research. Studies in Higher Education, 43 (8), 1405–1416. Available from https://doi.org/10.1080/03075079.2016.1258052.</p>
+
 						
 								</div>
 							</section>
-<section id="assignment1">
-<div class="inner">
-									<header class="major">
-										<h2>Assignment 1</h2>
-									</header>
-									<p>The task in this assignment was to carry out EDA and perform unsupervised learning on the Airbnb dataset. My focus in this assignment was in performing EDA, and organizing the google colab space so that the team could collaborate on the assignment. My first involvement was doing initial exploration on the dataset such as getting the feature types and null values. I then calculated skew and kurtosis then explaining our high skew and kurtosis in certain columns indicated a lack of symmetry and a heavy tail and peakedness relative to the normal distribution in these columns (DeCarlo, 1996).</p>
-  <p>After another group member added a correlation matrix to view correlation between numeric columns, I added codes for categoric data and generated then analyzed a pairplot so that we could see the relationship that each column had with each other.</p>
 
-<p>Working on this project had many challenges due to the large group size and time difference between group members, but I still feel that I was able to apply the knowledge learned in the early weeks of this module to contribute to a thorough EDA of the dataset, and support my group members with the clustering and troubleshoot python code when required.</p>									
-
-	<p><a href="https://github.com/Nicholas-Bandy/eportfolio/blob/main/Machine Learning Project Report 1.docx">View the report</a> or <a href="https://github.com/Nicholas-Bandy/eportfolio/blob/main/ML_Assessment_1_version_2.ipynb">view the code here</a></p>
-	
-<p>References</p>
-
-<p>DeCarlo, L. T. (1997) On the Meaning and Use of Kurtosis. Psychological methods. [Online] 2 (3), 292–307. Available From https://web-s-ebscohost-com.uniessexlib.idm.oclc.org/ehost/pdfviewer/pdfviewer?vid=0&sid=51b16d11-8f19-40e6-a38e-993423b297d6%40redis</p>
-
-</div>
-							</section>
-						
-						<!-- Three -->
-						<section id="gradient_descent">
+<!-- Two -->
+						<section id="discussion_2_summary">
 								<div class="inner">
 									<header class="major">
-										<h2>Gradient Descent</h2>
+										<h2>Discussion 2 Summary</h2>
 									</header>
-									<p>In this activity we observe how modifying the number of iterations and learning rate from the sample code below impacts the cost.</p>
-				<pre><code># code credit:codebasics https://codebasics.io/coming-soon
+									<p>In my initial post I stated that Abi is obligated to present all results, regardless if they’re positive or negative for Whizzz. Withholding some results would be dishonest and unethical, and could also cause a loss of knowledge related to the product (Sabatello et. Al, 2022). As mentioned by my peers, presenting all results protects Abi from the potential consequences of covering up potential harm of the product (Buzby et. Al, 2001). If Whizzz makes false claims about the product they would breach food safety standards (FSA, 2023), and presenting all results protects Abi in the case of an investigation.</p>
+									<p>In all of our discussions there are no arguments for Abi to withhold any of the results for Whizzz, highlighting ethics and self-protection as the key reasons. I also stated that Abi should have taken additional steps to prevent this ethical dilemma before starting the project. Considering that it was funded by Whizzz, Abi should have identified this potential issue before starting and made an agreement about publishing the full data results. We were all in agreement that any decision by Whizzz to only share positive outcomes of the report is not Abi’s responsibility, as long as he was thorough in his report and included all of his findings.</p>
+							<p>References</p>
 
-import numpy as np
-
-def gradient_descent(x,y):
-    m_curr = b_curr = 0
-    iterations = 300       #change value
-    n = len(x)
-    learning_rate = 0.08   #change value
-
-    for i in range(iterations):
-        y_predicted = m_curr * x + b_curr
-        cost = (1/n) * sum([val**2 for val in (y-y_predicted)])
-        md = -(2/n)*sum(x*(y-y_predicted))
-        bd = -(2/n)*sum(y-y_predicted)
-        m_curr = m_curr - learning_rate * md
-        b_curr = b_curr - learning_rate * bd
-        print ("m {}, b {}, cost {} iteration {}".format(m_curr,b_curr,cost, i))
-
-x = np.array([1,2,3,4,5])
-y = np.array([5,7,9,11,13])
-
-gradient_descent(x,y)</code></pre>
-									<p>The default value for the learning rate is 0.08, and the cost continually decreases after each iteration. Increasing this value to 0.09 or greater changes how the cost behaves, as it starts to increase with every iteration instead of decreasing. The more it’s increased, the faster the cost continues to grow. There is also increasingly large slopes alternating between positive and negative. This represents the rate of change of the function (Mayo, 2017), meaning that the learning rate step size is too large to find the minima and will continually grow in cost as it’s overshooting it.</p>
-									<p>Decreasing the learning rate allows the cost to continue decreasing with each iteration, but it happens at a slower rate. To reach the same low levels of cost as before we need to increase the number of iterations, and will therefore take more time to reach the minima. Increasing the number of iterations too much made changes in the cost irrelevant for each iteration, as the difference was so small. This is a sign that we are already at a minima. On the contrary, lowering the number of iterations too much resulted in the cost function not getting nearly as low. Finding the correct balance or setting the iterations to quit early once a certain cost is reached could help to ensure that you are close enough to the minima without repeating unnecessarily.</p>
-								<p>This learning activity gave the opportunity to manipluate a pre built model and onserve how the changes affected the learning rate. I find that activities like this can be extremely useful when initially exploring a new concept, and being able to view and modify the gradient descent implementation helped me to understand it more.</p>
-									<p>References</p>
-								<p>Mayo, M. (2017). Neural Network Foundations, Explained: Updating Weights with Gradient Descent & Backpropagation. Available From: https://www.kdnuggets.com/2017/10/neural-network-foundations-explained-gradient-descent.html</p>
-								
+<p>Buzby, J.C., Frenzen, P.D. and Rasco, B., 2001. Product Liability and Microbial Foodborne Illness. Agricultural Economic Report No. 799. Food and Rural Economics Division, Economic Research Service, U.S. Department of Agriculture.</p>
+<p>Food Standards Agency (2023) Packaging and Labelling. Available from https://www.food.gov.uk/business-guidance/packaging-and-labelling#:~:text=1169%2F2011%2C%20the%20Food%20Information,%2C%20milk%2C%20fish%20and%20meat.</p>
+<p>Sabatello, M., Martschenko, D., Cho, M., Brothers, K. (2022)  Data sharing and community-engaged research: Data sharing must be accompanied by responsibility sharing. Science (American Association for the Advancement of Science). Available From: https://web-p-ebscohost-com.uniessexlib.idm.oclc.org/ehost/pdfviewer/pdfviewer?vid=0&sid=b5334d05-bef4-44bc-8ce0-a9aef4fee78b%40redis</p>
 								</div>
 							</section>
 
